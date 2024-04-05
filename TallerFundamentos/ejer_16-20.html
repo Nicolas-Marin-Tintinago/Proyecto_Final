@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solucion a ejercicios</title>
+</head>
+<body>
+    <h2>Ejercicios del 16 al 20</h2>
+
+    <p id = 'resp16'></p>
+    <script>
+        
+
+        function puedeConducir(edad,licencia) {
+            
+           if (edad >= 18 , licencia === 'si') {
+
+                var maneja = true   
+            
+           }else if (edad <= 18 , licencia === 'no'){
+
+                var maneja = false
+           }else if (edad <= 18 , licencia === 'si'){
+
+                var maneja = true
+           } return maneja;
+        }
+        var conduccion = puedeConducir(21,'no');
+        const resp16 = document.getElementById('resp16');
+        resp16.innerHTML = conduccion;
+        
+    </script>
+
+
+    <p>funcion dia Habil</p>
+
+    <input type="text" id="dia" placeholder="ingrese un dia de la semana">
+    <button onclick="DiaHabil()">consultar</button>
+<script>
+
+function DiaHabil(params) {
+
+    var dia= document.getElementById("dia").value;
+
+   let DiaSemana = ["lunes","Martes","Miercoles","Jueves","Viernes","Sabado","Domingo"];
+
+   if (dia == DiaSemana[0] || DiaSemana[1]|| DiaSemana[2]|| DiaSemana[3]|| DiaSemana[4]){
+
+alert(dia + " es dia habil");
+   }else{
+
+alert(dia + " no es dia habil");
+
+   }
+    
+}
+
+</script>
+
+<p> Es Bisiesto</p>
+
+<input type="number" id="año" placeholder="ingres el año">
+<button onclick="EsBisiesto()">Es Bisiesto?</button>
+<script>
+   
+function EsBisiesto(año) {
+ var año = document.getElementById("año").value;
+    if ((año % 4 === 0 && año % 100 !== 0) || año % 400 === 0) {
+        alert("SI es bisiesto");
+    } else {
+        alert("No es bisiesto");
+    }
+}
+
+
+</script>
+
+<p>Es multiplo</p>
+
+
+<script>
+
+
+    function esMultiplo(primerNumero, segundoNumero) 
+    {
+    return primerNumero % segundoNumero === 0;
+}
+
+
+let numero1 = prompt("Ingrese el primer número:");
+let numero2 = prompt("Ingrese el segundo número:");
+
+
+numero1 = parseInt(numero1);
+numero2 = parseInt(numero2);
+
+
+if (isNaN(numero1) || isNaN(numero2)) {
+    alert("Por favor, ingrese números válidos.");
+} else {
+   
+    if (esMultiplo(numero1, numero2)) {
+        alert(`Sí, el número ${numero1} es múltiplo de ${numero2}.`);
+    } else {
+        alert(`No, el número ${numero1} no es múltiplo de ${numero2}.`);
+    }
+}
+</script>
+
+<p>validar tarjeta</p>
+
+<script>
+function validarTarjetaCredito() {
+    let numero = prompt("Ingrese el número de su tarjeta de crédito:");
+    let suma = 0;
+    let esPar = false;
+
+    for (let i = numero.length - 1; i >= 0; i--) {
+        let digito = parseInt(numero[i], 10);
+
+        if (esPar && (digito *= 2) > 9) digito -= 9;
+
+        suma += digito;
+        esPar = !esPar;
+    }
+
+    return (suma % 10) === 0;
+}
+
+// Ejecutar la función y mostrar el resultado
+if (validarTarjetaCredito()) {
+    alert("El número de tarjeta de crédito es válido.");
+} else {
+    alert("El número de tarjeta de crédito no es válido.");
+}
+
+
+</script>
+
+
+    <br>
+    <a href="ejer_21-25.html" target="_blank">siguiente</a>
+    <br>
+    <a href="ejer_11-15.html" target="_blank">atras</a>
+</body>
+</html>

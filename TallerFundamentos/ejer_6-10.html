@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solucion a ejercicios</title>
+</head>
+<body>
+    <h2>Ejercicos del 6 al 10</h2>
+
+<input type="text" id="radio" placeholder="longitud del radio de su circulo">
+<button onclick="CalcularAreaCirculo()">Calcular area de circulo</button>
+
+<script>
+
+function CalcularAreaCirculo(){
+
+var radio=document.getElementById("radio").value;
+const PI= 3.1416;
+var Area = PI*(radio*radio);
+alert("El area de su circulo es de "+ Area);
+
+}
+
+</script>
+
+<br>
+<input type="number" id="Num1" placeholder="ingrese el primer numero">
+<input type="number" id="Num2" placeholder="ingrese el segundo numero">
+<input type="number" id="Num3" placeholder="ingrese el tercer numero">
+<br>
+<button onclick="CalcularPromedio()">Calcular promedio</button>
+
+<script>
+    function CalcularPromedio(){
+
+var Num1 = document.getElementById("Num1").value;
+var Num2 = document.getElementById("Num2").value;
+var Num3 = document.getElementById("Num3").value;
+
+var Suma = Num1 + Num2 + Num3;
+var Promedio = Suma / 3;
+alert("su promedio es "+ Promedio);
+
+    }
+</script>
+
+<br>
+<p>Calcular edad edad Futura</p>
+<input type="number" id="edadActual">
+<button onclick="calcularEdadFutura()">Calcular</button>
+<p id="resultado"></p>
+
+<script>
+    function calcularEdadFutura() {
+        const edadActual = parseInt(document.getElementById('edadActual').value);
+        const edadFutura = edadActual + 10;
+        document.getElementById('resultado').innerText = `Dentro de 10 años tendrás ${edadFutura} años.`;
+    }
+</script>
+<br>
+<p>Clacular descuento</p>
+
+<input type="number" id="precio" placeholder="ingrese el precio del articulo">
+<input type="text" id="descuento" placeholder="ingrese de cuanto es el descuento">
+<button onclick="CalcularDescuento">calcular</button>
+<p id="mes"></p>
+
+<script>
+function CalcularDescuento(){
+
+   let precio = document.getElementById("precio").value;
+   let descuento = document.getElementById("descuento").value;
+   let valor = descuento * precio;
+   document.getElementById("mes").innerText = "ahora el precio es de $(valor)";
+
+
+
+}
+
+
+</script>
+
+<p id = 'resp10'></p>
+<script>
+    function generarNumeroAleatorio(min, max) {
+        
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random()*(max - min) + min) ;
+    }
+    var aleatorio ='Numero aleatorio entre 0 y 100 = '+ generarNumeroAleatorio(0,100);
+    const resp10 = document.getElementById('resp10');
+    resp10.innerHTML = aleatorio;
+    
+</script>
+
+
+    <br>
+    <a href="ejer_11-15.html" target="_blank">siguiente</a>
+    <br>
+    <a href="ejer_1-5.html" target="_blank">atras</a>
+</body>
+</html>

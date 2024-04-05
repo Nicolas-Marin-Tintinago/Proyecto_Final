@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libreta de contactos</title>
+</head>
+<body>
+    <h2>Libreta de contactos</h2>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <button onclick="saveContact()">Agregar contacto</button>
+    <button onclick="clearContacts()">Borrar todos los contactos</button>
+    <hr>
+    <table id="contactTable" border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    <script>
+        let contacts = [];
+
+        const contactTable = document.getElementById('contactTable').getElementsByTagName('tbody')[0];
+
+        function saveContact() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            if (name === '' || email === '') {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+
+            if (contacts.some(contact => contact.email === email)) {
+                alert('Este correo electrónico ya existe en la libreta.');
+                return;
+            }
+
+            const contact = { name, email };
+            contacts.push(contact);
+            renderContacts();
+        }
+
+        function renderContacts() {
+            contactTable.innerHTML = '';
+            contacts.forEach(function (contact, index) {
+                const row = `<tr>
+                                <td>${contact.name}</td>
+                                <td>${contact.email}</td>
+                                <td>
+                                    <button onclick="deleteContact(${index})">Eliminar</button>
+                                    <button onclick="editContact(${index})">Modificar</button>
+                                </td>
+                            </tr>`;
+                contactTable.innerHTML += row;
+            });
+        }
+
+        function deleteContact(index) {
+            if (confirm('¿Estás seguro de que quieres eliminar este contacto?')) {
+                contacts.splice(index, 1);
+                renderContacts();
+            }
+        }
+
+        function editContact(index) {
+            const contact = contacts[index];
+            document.getElementById('name').value = contact.name;
+            document.getElementById('email').value = contact.email;
+            deleteContact(index);
+        }
+
+        function clearContacts() {
+            if (confirm('¿Estás seguro de que quieres borrar todos los contactos?')) {
+                contacts = [];
+                renderContacts();
+            }
+        }
+    </script>
+</body>
+</html>

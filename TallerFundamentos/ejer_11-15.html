@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solucion a ejercicios</title>
+</head>
+<body>
+    <h2>Ejercicios del 11 al 15</h2>
+
+
+
+    <p id = 'resp11'></p>
+    <script>
+        function esMayorDeEdad(edad) {
+            
+            if (edad >= 18){
+                var check = 'Es mayor de edad'
+            } else {
+                var check = 'Es menor de edad'
+            }
+            return check ;
+        }
+        var aleatorio = esMayorDeEdad(18);
+        const resp11 = document.getElementById('resp11');
+        resp11.innerHTML = aleatorio;
+        
+    </script>
+
+ <p id = 'resp12'></p>
+
+ <script>
+     
+
+     function compararCadenas(cad1, cad2) {
+         
+         if (cad1 === cad2){
+             var check1 = 'Son iguales'
+         }else {
+             var chack1 = 'Son distintas'
+         }            
+         return check1 ;
+     }
+     var cadena = compararCadenas('Carro','Carro');
+     const resp12 = document.getElementById('resp12');
+     resp12.innerHTML = cadena;
+     
+ </script>
+
+ <p id = 'resp13'></p>
+    <script>
+        
+
+        function evaluarCalificaciones(nota) {
+            
+            if (nota <= 100 && nota >= 90){
+                var check2 = 'Excelente'
+            }else if (nota <= 89 && nota >= 80){
+                var check2 = 'Bueno'
+            }else if (nota <= 79 && nota >= 70){
+                var check2 = 'Regular'
+            }else if (nota < 70){
+                var check2 = 'Insuficiente'
+            }
+            return check2 ;
+        }
+        var calif = evaluarCalificaciones(89);
+        const resp13 = document.getElementById('resp13');
+        resp13.innerHTML = calif;
+        
+    </script>
+
+<p id = 'resp14'></p>
+<script>
+    
+
+    function verificarParidad(numCheck) {
+        
+        if (numCheck % 2 === 0){
+            var check3 = 'Es par'
+        }else {
+            var check3 = 'Es impar'
+        }
+        return check3 ;
+    }
+    var parImpar = verificarParidad(89);
+    const resp14 = document.getElementById('resp14');
+    resp14.innerHTML = parImpar;
+    
+</script>
+
+<p id = 'resp15'></p>
+<script>
+    
+
+    function esPositivoONegativo(simbol) {
+        
+        if (simbol*-1 === -1){
+            var check4 = 'Es Positivo'
+        }else {
+            var check4 = 'Es Negativo'
+        }
+        return check4 ;
+    }
+    var simbols = esPositivoONegativo(-89);
+    const resp15 = document.getElementById('resp15');
+    resp15.innerHTML = simbols;
+    
+</script>
+
+
+    <br>
+    <a href="ejer_16-20.html" target="_blank">siguiente</a>
+    <br>
+    <a href="ejer_6-10.html" target="_blank">atras</a>
+</body>
+</html>
